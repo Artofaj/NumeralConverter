@@ -18,16 +18,16 @@ const rules = {
 
 export default class RomanNumerals {
 
-    number: number
+    baseValue: number
 
-    constructor(number) {
-        this.number = number
+    constructor(baseValue) {
+        this.baseValue = baseValue
     }
 
-    toRoman = () => {
+    toRoman = (input: number) => {
         let result: string = ""
 
-        let number: number = this.number
+        let number: number = input
 
         const romans = Object.keys(rules)
 
@@ -38,14 +38,15 @@ export default class RomanNumerals {
                 result += romans[i]
             }
         }
+        console.log(result)
 
         return result
     }
 
-    fromRoman = string => {
+    fromRoman = (input: string) => {
         let result = 0
 
-        let num = string.toUpperCase()
+        let num = input.toUpperCase()
 
         for (let i = 0; i + 1 < num.length; ++i) {
             const current = rules[num.charAt(i)]
@@ -62,7 +63,7 @@ export default class RomanNumerals {
         return result
     }
 
-    render() {
-        return this.number
+    setValue = (input: number) => {
+        this.baseValue = input
     }
 }
