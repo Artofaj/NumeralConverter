@@ -3,10 +3,8 @@ import RomanNumerals from "./romanNumerals"
 
 
 const Converter = () => {
-  const handleClick = (e) => {
-  
-  console.log(value.toRoman())
-  return null
+  const handleChange = e => {
+    return null
   }
 
   const value = new RomanNumerals(11)
@@ -19,8 +17,8 @@ const Converter = () => {
         <input
           type="number"
           id="arabic"
-          onChange={e => handleClick(e.target.value)}
-          //onChange={e => toRoman(e.target.value)}
+          value={value.baseValue}
+          onChange={e => handleChange(e.target.value)}
         />
       </label>
       <label htmlFor="latinae">
@@ -28,9 +26,8 @@ const Converter = () => {
         <input
           type="text"
           id="latinae"
-          value={value.toRoman}
-          onChange={e => handleClick(e.target.value)}
-          //onChange={e => fromRoman(e.target.value) }
+          value={value.toRoman()}
+          onChange={e => handleChange(e.target.value)}
         />
       </label>
     </form>
