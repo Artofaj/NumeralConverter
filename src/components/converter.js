@@ -1,12 +1,12 @@
 import React, { useState } from "react"
+import Input from "./converterInput"
 import RomanNumerals from "./romanNumerals"
 
 const Converter = () => {
-
   const value = new RomanNumerals(100)
 
   const [stateValue, setValue] = useState(value.baseValue)
-  
+
   const handleChange = e => {
     let targetValue = e.target.value
 
@@ -18,10 +18,21 @@ const Converter = () => {
     setValue(value.baseValue)
   }
 
-
   return (
     <form>
-      <label htmlFor="arabic">
+      <Input
+        id="Arabicae"
+        type="number"
+        value={stateValue}
+        // onChange={e => handleChange(e)}
+      />
+      <Input
+        id="Latinae"
+        type="text"
+        value={value.toRoman(stateValue)}
+        // onChange={e => handleChange(e)}
+      />
+      {/*       <label htmlFor="arabic">
         Arabicae
         <input
           type="number"
@@ -38,7 +49,7 @@ const Converter = () => {
           value={value.toRoman(stateValue)}
           onChange={e => handleChange(e)}
         />
-      </label>
+      </label> */}
     </form>
   )
 }

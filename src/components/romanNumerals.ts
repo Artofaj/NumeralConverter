@@ -38,7 +38,6 @@ export default class RomanNumerals {
                 result += romans[i]
             }
         }
-        console.log(result)
 
         return result
     }
