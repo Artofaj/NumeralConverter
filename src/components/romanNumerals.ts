@@ -44,13 +44,13 @@ export default class RomanNumerals {
     }
 
     fromRoman = (input: string) => {
-        let result = 0
+        let result: number = 0
 
-        let num = input.toUpperCase()
+        let romanNumber: string = input.toUpperCase()
 
-        for (let i = 0; i + 1 < num.length; ++i) {
-            const current = rules[num.charAt(i)]
-            const next = rules[num.charAt(i + 1)]
+        for (let i = 0; i + 1 < romanNumber.length; ++i) {
+            const current = rules[romanNumber.charAt(i)]
+            const next = rules[romanNumber.charAt(i + 1)]
             if (current >= next) {
                 result += current
             } else {
@@ -58,7 +58,7 @@ export default class RomanNumerals {
             }
         }
 
-        result = result + rules[num.charAt(num.length - 1)]
+        result = result + rules[romanNumber.charAt(romanNumber.length - 1)]
 
         return result
     }

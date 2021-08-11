@@ -1,14 +1,23 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import RomanNumerals from "./romanNumerals"
 
 const Converter = () => {
-  const handleChange = e => {
-    value.setValue(e)
-    setValue(value.baseValue)
-  }
+
   const value = new RomanNumerals(100)
 
   const [stateValue, setValue] = useState(value.baseValue)
+  
+  const handleChange = e => {
+    let targetValue = e.target.value
+
+    if (e.target.id === "latinae") {
+      targetValue = value.fromRoman(e.target.value)
+    }
+
+    value.setValue(targetValue)
+    setValue(value.baseValue)
+  }
+
 
   return (
     <form>
@@ -18,7 +27,7 @@ const Converter = () => {
           type="number"
           id="arabic"
           value={stateValue}
-          onChange={e => handleChange(e.target.value)}
+          onChange={e => handleChange(e)}
         />
       </label>
       <label htmlFor="latinae">
@@ -27,7 +36,7 @@ const Converter = () => {
           type="text"
           id="latinae"
           value={value.toRoman(stateValue)}
-          onChange={e => handleChange(e.target.value)}
+          onChange={e => handleChange(e)}
         />
       </label>
     </form>
