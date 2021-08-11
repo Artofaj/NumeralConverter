@@ -30,7 +30,7 @@ const Converter = () => {
         id="Latinae"
         type="text"
         value={value.toRoman(stateValue)}
-         onChange={handleChange}
+        onChange={handleChange}
       />
     </form>
   )
