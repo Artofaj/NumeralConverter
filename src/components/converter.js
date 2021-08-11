@@ -24,32 +24,14 @@ const Converter = () => {
         id="Arabicae"
         type="number"
         value={stateValue}
-        // onChange={e => handleChange(e)}
+         onChange={handleChange}
       />
       <Input
         id="Latinae"
         type="text"
         value={value.toRoman(stateValue)}
-        // onChange={e => handleChange(e)}
+         onChange={handleChange}
       />
-      {/*       <label htmlFor="arabic">
-        Arabicae
-        <input
-          type="number"
-          id="arabic"
-          value={stateValue}
-          onChange={e => handleChange(e)}
-        />
-      </label>
-      <label htmlFor="latinae">
-        Latinae
-        <input
-          type="text"
-          id="latinae"
-          value={value.toRoman(stateValue)}
-          onChange={e => handleChange(e)}
-        />
-      </label> */}
     </form>
   )
 }
