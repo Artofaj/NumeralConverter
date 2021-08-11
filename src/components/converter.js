@@ -14,7 +14,17 @@ const Converter = () => {
       targetValue = value.fromRoman(e.target.value)
     }
 
+    if (
+      (targetValue == 0) |
+      (targetValue.length == 0) |
+      isNaN(targetValue)
+    ) {
+      alert("Sorry, Romans didn't use the zero.")
+      targetValue = 1
+    }
+
     value.setValue(targetValue)
+
     setValue(value.baseValue)
   }
 
@@ -24,7 +34,7 @@ const Converter = () => {
         id="Arabicae"
         type="number"
         value={stateValue}
-         onChange={handleChange}
+        onChange={handleChange}
       />
       <Input
         id="Latinae"
