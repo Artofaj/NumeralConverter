@@ -1,13 +1,13 @@
 import React from "react"
 import RomanNumerals from "./romanNumerals"
 
-const handleClick = (e) => {
-
-console.log(e)
-return null
-}
 
 const Converter = () => {
+  const handleClick = (e) => {
+  
+  console.log(value.toRoman())
+  return null
+  }
 
   const value = new RomanNumerals(11)
 
@@ -19,7 +19,6 @@ const Converter = () => {
         <input
           type="number"
           id="arabic"
-          value={value}
           onChange={e => handleClick(e.target.value)}
           //onChange={e => toRoman(e.target.value)}
         />
@@ -27,11 +26,11 @@ const Converter = () => {
       <label htmlFor="latinae">
         Latinae
         <input
-        type="text"
-        id="latinae"
-        placeholder="M"
-        onChange={e => handleClick(e.target.value)}
-        //onChange={e => fromRoman(e.target.value) } 
+          type="text"
+          id="latinae"
+          value={value.toRoman}
+          onChange={e => handleClick(e.target.value)}
+          //onChange={e => fromRoman(e.target.value) }
         />
       </label>
     </form>

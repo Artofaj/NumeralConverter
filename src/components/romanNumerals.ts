@@ -24,15 +24,17 @@ export default class RomanNumerals {
         this.number = number
     }
 
-    toRoman = num => {
-        let result = ""
+    toRoman = () => {
+        let result: string = ""
+
+        let number: number = this.number
 
         const romans = Object.keys(rules)
 
         for (let i = 0; i < romans.length; ++i) {
             const val = rules[romans[i]]
-            while (num >= val) {
-                num -= val
+            while (number >= val) {
+                number -= val
                 result += romans[i]
             }
         }
