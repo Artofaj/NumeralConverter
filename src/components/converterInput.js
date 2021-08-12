@@ -17,7 +17,9 @@ const Input = props => {
 
   return (
     <label htmlFor={props.id.toLowerCase()}>
+      <h2>
       {props.id}
+      </h2>
       <input
         type={props.type}
         id={props.id.toLowerCase()}

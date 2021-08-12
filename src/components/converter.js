@@ -29,27 +29,31 @@ const Converter = () => {
     showWarning(message)
     setTimeout(() => {
       showWarning(null)
-    }, 1000);
+    }, 1000)
   }
 
   return (
-    <form>
-      <div className="in-2-cols">
-        <Input
-          id="Arabicae"
-          type="number"
-          value={stateValue}
-          onChange={handleChange}
-        />
-        <Input
-          id="Latinae"
-          type="text"
-          value={value.toRoman(stateValue)}
-          onChange={handleChange}
-        />
-      </div>
-      {warning !== null && <div>{warning}</div>}
-    </form>
+    <section id="Converter">
+      <form>
+        <div className="in-2-cols">
+          <Input
+            id="Arabicae"
+            type="number"
+            value={stateValue}
+            onChange={handleChange}
+          />
+          <Input
+            id="Latinae"
+            type="text"
+            value={value.toRoman(stateValue)}
+            onChange={handleChange}
+          />
+        </div>
+      </form>
+      {warning !== null && (
+        <div style={{ backgroundColor: `var(--clr-red)` }}>{warning}</div>
+      )}
+    </section>
   )
 }
 export default Converter

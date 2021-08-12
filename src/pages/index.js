@@ -7,14 +7,6 @@ import Converter from "../components/converter"
 const IndexPage = () => (
   <Layout>
     <Seo title="Converter" />
-    <div className="in-2-cols">
-      <section>
-        <h1>Arabic</h1>
-      </section>
-      <section>
-        <h1>Roman</h1>
-      </section>
-    </div>
     <Converter />
   </Layout>
 )
