@@ -16,13 +16,20 @@ const Converter = () => {
     }
 
     if ((targetValue == 0) | (targetValue.length == 0) | isNaN(targetValue)) {
-      showWarning("Sorry, Romans didn't use the zero.")
+      triggerWarning("Sorry, Romans didn't use the zero.")
       targetValue = 1
     }
 
     value.setValue(targetValue)
 
     setValue(value.baseValue)
+  }
+
+  const triggerWarning = message => {
+    showWarning(message)
+    setTimeout(() => {
+      showWarning(null)
+    }, 1000);
   }
 
   return (
@@ -33,15 +40,15 @@ const Converter = () => {
           type="number"
           value={stateValue}
           onChange={handleChange}
-          />
+        />
         <Input
           id="Latinae"
           type="text"
           value={value.toRoman(stateValue)}
           onChange={handleChange}
-          />
+        />
       </div>
-          {warning !== null && <div>{warning}</div>}
+      {warning !== null && <div>{warning}</div>}
     </form>
   )
 }
