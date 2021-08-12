@@ -15,7 +15,7 @@ const Converter = () => {
       targetValue = value.fromRoman(e.target.value)
     }
 
-    if ((targetValue == 0) | (targetValue.length == 0) | isNaN(targetValue)) {
+    if ((targetValue == 0)) {
       triggerWarning("Sorry, Romans didn't use the zero.")
       targetValue = 1
     }
