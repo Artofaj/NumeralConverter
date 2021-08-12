@@ -6,6 +6,7 @@ const Converter = () => {
   const value = new RomanNumerals(100)
 
   const [stateValue, setValue] = useState(value.baseValue)
+  const [warning, showWarning] = useState(null)
 
   const handleChange = e => {
     let targetValue = e.target.value
@@ -14,12 +15,8 @@ const Converter = () => {
       targetValue = value.fromRoman(e.target.value)
     }
 
-    if (
-      (targetValue == 0) |
-      (targetValue.length == 0) |
-      isNaN(targetValue)
-    ) {
-      alert("Sorry, Romans didn't use the zero.")
+    if ((targetValue == 0) | (targetValue.length == 0) | isNaN(targetValue)) {
+      showWarning("Sorry, Romans didn't use the zero.")
       targetValue = 1
     }
 
@@ -31,24 +28,20 @@ const Converter = () => {
   return (
     <form>
       <div className="in-2-cols">
-        {}
-        <div>
-
-        </div>
-
-      <Input
-        id="Arabicae"
-        type="number"
-        value={stateValue}
-        onChange={handleChange}
-        />
-      <Input
-        id="Latinae"
-        type="text"
-        value={value.toRoman(stateValue)}
-        onChange={handleChange}
-        />
-        </div>
+        <Input
+          id="Arabicae"
+          type="number"
+          value={stateValue}
+          onChange={handleChange}
+          />
+        <Input
+          id="Latinae"
+          type="text"
+          value={value.toRoman(stateValue)}
+          onChange={handleChange}
+          />
+      </div>
+          {warning !== null && <div>{warning}</div>}
     </form>
   )
 }
