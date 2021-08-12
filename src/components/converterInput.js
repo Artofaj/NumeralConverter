@@ -1,7 +1,6 @@
 import React from "react"
 
 const Input = props => {
-
   const validateInput = e => {
     if ((e.keyCode === 8) | (e.keyCode >= 35 && e.keyCode <= 40)) {
       return true

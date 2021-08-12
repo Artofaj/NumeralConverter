@@ -30,18 +30,25 @@ const Converter = () => {
 
   return (
     <form>
+      <div className="in-2-cols">
+        {}
+        <div>
+
+        </div>
+
       <Input
         id="Arabicae"
         type="number"
         value={stateValue}
         onChange={handleChange}
-      />
+        />
       <Input
         id="Latinae"
         type="text"
         value={value.toRoman(stateValue)}
         onChange={handleChange}
-      />
+        />
+        </div>
     </form>
   )
 }
