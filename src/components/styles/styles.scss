@@ -16,3 +16,25 @@ body {
 section {
   padding: var(--gap-md) 0;
 }
+
+button {
+  border: none;
+  padding: var(--gap-sm);
+  transition: all 100ms linear;
+  border-radius: var(--rounded-corners);
+  opacity: 0.9;
+
+  &.primary {
+    background-color: var(--clr-blue);
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: var(--clr-red);
+  }
+
+  &:hover {
+    opacity: 1;
+    border-radius: 0;
+  }
+}
