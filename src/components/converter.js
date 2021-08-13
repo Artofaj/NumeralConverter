@@ -47,7 +47,7 @@ const Converter = () => {
     <section id="Converter" className="card" style={styles}>
       <Warning warning={warning} showWarning={showWarning} />
       <div style={{ margin: "auto" }}>
-        <form style={{ padding: "var(--gap-md) 0", width: "100%" }}>
+        <form style={{ padding: "var(--gap-md) 0", width: "100%", margin: 0 }}>
           <div className="in-2-cols">
             <Input
               id="Arabicae"
@@ -65,12 +65,11 @@ const Converter = () => {
             />
           </div>
         </form>
-
-        <CheatSheet />
-      </div>
-        <p>
+        <p className="font-centered">
           Just type a number, we will handle the conversion for you &#128521;
         </p>
+        <CheatSheet />
+      </div>
     </section>
   )
 }
