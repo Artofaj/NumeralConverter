@@ -5,6 +5,7 @@
 @import "./helpers.scss";
 :root {
   --rounded-corners: 10px;
+  --gap-sm: 3rem;
 }
 
 body {
@@ -12,5 +13,5 @@ body {
 }
 
 section {
-  padding: 3rem 0;
+  padding: var(--gap-sm) 0;
 }
