@@ -4,18 +4,17 @@ import RomanNumerals from "./romanNumerals"
 
 const Converter = () => {
   const styles = {
-    backgroundColor: '#FFF',
     minHeight: "60vh",
-    display:"flex",
+    display: "flex",
     justifyContent: "space-bewteen",
-    alignContent:"center",
-    borderRadius:"var(--rounded-corners)"
+    alignContent: "center",
   }
 
   const value = new RomanNumerals(100)
 
   const [stateValue, setValue] = useState(value.baseValue)
   const [warning, showWarning] = useState(null)
+  const [cheatsheet, showCheatsheet] = useState(false)
 
   const handleChange = e => {
     let targetValue = e.target.value
@@ -24,14 +23,18 @@ const Converter = () => {
       targetValue = value.fromRoman(e.target.value)
     }
 
-    if ((targetValue == 0)) {
-      triggerWarning("Sorry, Romans didn't use the zero.")
-      targetValue = 1
-    }
-
     value.setValue(targetValue)
 
     setValue(value.baseValue)
+  }
+
+  const validateEmpty = e => {
+    let targetValue = e.target.value
+
+    if (targetValue == 0) {
+      triggerWarning("Sorry, Romans didn't use the zero.")
+      targetValue = 1
+    }
   }
 
   const triggerWarning = message => {
@@ -42,26 +45,28 @@ const Converter = () => {
   }
 
   return (
-    <section id="Converter">
+    <section id="Converter" className="card">
+      {warning !== null && (
+        <div style={{ backgroundColor: `var(--clr-red)` }}>{warning}</div>
+      )}
       <form>
         <div style={styles} className="in-2-cols">
           <Input
             id="Arabicae"
             type="number"
             value={stateValue}
+            onBlur={validateEmpty}
             onChange={handleChange}
           />
           <Input
             id="Latinae"
             type="text"
             value={value.toRoman(stateValue)}
+            onBlur={validateEmpty}
             onChange={handleChange}
           />
         </div>
       </form>
-      {warning !== null && (
-        <div style={{ backgroundColor: `var(--clr-red)` }}>{warning}</div>
-      )}
     </section>
   )
 }
