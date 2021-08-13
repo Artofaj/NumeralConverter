@@ -3,3 +3,9 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.card {
+  background-color: #fff;
+  border-radius: var(--rounded-corners);
+  padding: 1rem;
+}

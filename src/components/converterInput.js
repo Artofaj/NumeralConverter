@@ -25,6 +25,7 @@ const Input = props => {
         id={props.id.toLowerCase()}
         value={props.value}
         onChange={e => props.onChange(e)}
+        onBlur={e => props.onBlur(e)}
         onKeyDown={e => validateInput(e)}
       />
     </label>

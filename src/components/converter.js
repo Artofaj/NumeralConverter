@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Input from "./converterInput"
 import RomanNumerals from "./romanNumerals"
+import CheatSheet from "./cheatSheet"
 
 const Converter = () => {
   const styles = {
@@ -67,6 +68,10 @@ const Converter = () => {
           />
         </div>
       </form>
+
+      <button onClick={() => showCheatsheet(!cheatsheet) }>{cheatsheet? "hide" : "show"} cheatsheet</button>
+
+      {cheatsheet && <CheatSheet />}
     </section>
   )
 }
