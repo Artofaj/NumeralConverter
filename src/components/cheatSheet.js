@@ -36,7 +36,11 @@ const CheatSheet = () => {
           </div>
         </>
       )}
-      <button style={{float:"right"}} onClick={() => showCheatsheet(!cheatsheet)}>
+      <button
+        className={cheatsheet ? "secondary" : "primary"}
+        style={{ float: "right" }}
+        onClick={() => showCheatsheet(!cheatsheet)}
+      >
         {cheatsheet ? "hide" : "show"} cheatsheet
       </button>
     </section>

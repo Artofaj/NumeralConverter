@@ -31,10 +31,12 @@ button {
 
   &.secondary {
     background-color: var(--clr-red);
+    color: #fff;
   }
 
   &:hover {
     opacity: 1;
-    border-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
