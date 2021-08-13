@@ -17,7 +17,6 @@ const Converter = () => {
 
   const [stateValue, setValue] = useState(value.baseValue)
   const [warning, showWarning] = useState(null)
-  const [cheatsheet, showCheatsheet] = useState(false)
 
   const handleChange = e => {
     let targetValue = e.target.value
@@ -46,12 +45,6 @@ const Converter = () => {
 
   return (
     <section id="Converter" className="card" style={styles}>
-      <button onClick={() => showCheatsheet(!cheatsheet)}>
-        {cheatsheet ? "hide" : "show"} cheatsheet
-      </button>
-
-      {cheatsheet && <CheatSheet />}
-
       <Warning warning={warning} showWarning={showWarning} />
 
       <form
@@ -74,6 +67,8 @@ const Converter = () => {
           />
         </div>
       </form>
+      
+      <CheatSheet />
     </section>
   )
 }
