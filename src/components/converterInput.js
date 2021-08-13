@@ -17,7 +17,7 @@ const Input = params => {
 
   return (
     <label htmlFor={params.id.toLowerCase()}>
-      <h2>{params.id}</h2>
+      <div style={{margin:"var(--gap-sm)"}} className="big-font font-centered">{params.id}</div>
       <input
         style={{
           fontSize: "2rem",
