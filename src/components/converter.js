@@ -68,6 +68,9 @@ const Converter = () => {
 
         <CheatSheet />
       </div>
+        <p>
+          Just type a number, we will handle the conversion for you &#128521;
+        </p>
     </section>
   )
 }
