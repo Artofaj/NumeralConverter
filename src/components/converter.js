@@ -3,6 +3,15 @@ import Input from "./converterInput"
 import RomanNumerals from "./romanNumerals"
 
 const Converter = () => {
+  const styles = {
+    backgroundColor: '#FFF',
+    minHeight: "60vh",
+    display:"flex",
+    justifyContent: "space-bewteen",
+    alignContent:"center",
+    borderRadius:"var(--rounded-corners)"
+  }
+
   const value = new RomanNumerals(100)
 
   const [stateValue, setValue] = useState(value.baseValue)
@@ -35,7 +44,7 @@ const Converter = () => {
   return (
     <section id="Converter">
       <form>
-        <div className="in-2-cols">
+        <div style={styles} className="in-2-cols">
           <Input
             id="Arabicae"
             type="number"
