@@ -1,0 +1,37 @@
+:root {
+  --rounded-corners: 10px;
+  --gap-sm: 1rem;
+  --gap-md: 3rem;
+  font-size: 19px;
+}
+
+body {
+  background-color: var(--clr-primary);
+}
+
+section {
+  padding: var(--gap-md) 0;
+}
+
+button {
+  border: none;
+  padding: var(--gap-sm);
+  transition: all 100ms linear;
+  border-radius: var(--rounded-corners);
+
+  &.primary {
+    background-color: var(--clr-blue);
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: var(--clr-red);
+    color: #fff;
+  }
+
+  &:hover {
+    font-size: 1.1em;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

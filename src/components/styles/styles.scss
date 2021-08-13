@@ -3,40 +3,4 @@
 @import "./overwrites.scss";
 @import "./colors.scss";
 @import "./helpers.scss";
-:root {
-  --rounded-corners: 10px;
-  --gap-sm: 1rem;
-  --gap-md: 3rem;
-}
-
-body {
-  background-color: var(--clr-primary);
-}
-
-section {
-  padding: var(--gap-md) 0;
-}
-
-button {
-  border: none;
-  padding: var(--gap-sm);
-  transition: all 100ms linear;
-  border-radius: var(--rounded-corners);
-  opacity: 0.9;
-
-  &.primary {
-    background-color: var(--clr-blue);
-    color: #fff;
-  }
-
-  &.secondary {
-    background-color: var(--clr-red);
-    color: #fff;
-  }
-
-  &:hover {
-    opacity: 1;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-}
+@import "./globals.scss";
