@@ -1,37 +1,36 @@
 import React from "react"
 
-const Input = props => {
+const Input = params => {
   const validateInput = e => {
     if ((e.keyCode === 8) | (e.keyCode >= 35 && e.keyCode <= 40)) {
       return true
     }
 
-    if (props.type === "number" && !/^[0-9]/g.test(e.key)) {
+    if (params.type === "number" && !/^[0-9]/g.test(e.key)) {
       return e.preventDefault()
     }
 
-    if (props.type === "text" && !/^[mMdDcCxXiIvVlL]/g.test(e.key)) {
+    if (params.type === "text" && !/^[mMdDcCxXiIvVlL]/g.test(e.key)) {
       return e.preventDefault()
     }
   }
 
   return (
-    <label htmlFor={props.id.toLowerCase()}>
-      <h2>
-      {props.id}
-      </h2>
+    <label htmlFor={params.id.toLowerCase()}>
+      <h2>{params.id}</h2>
       <input
-      style={{
-        fontSize: "2rem",
-        padding: "0.5rem 1rem",
-        width: "100%"
-      }}
-        type={props.type}
-        id={props.id.toLowerCase()}
-        value={props.value}
-        onChange={e => props.onChange(e)}
-        onBlur={e => props.onBlur(e)}
+        style={{
+          fontSize: "2rem",
+          padding: "0.5rem 1rem",
+          width: "100%",
+        }}
+        type={params.type}
+        id={params.id.toLowerCase()}
+        value={params.value}
+        onChange={e => params.onChange(e)}
+        onBlur={e => params.onBlur(e)}
         onKeyDown={e => validateInput(e)}
+        min={params.type ==="number" && 1}
       />
     </label>
   )
