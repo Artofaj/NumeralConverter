@@ -21,6 +21,11 @@ const Input = props => {
       {props.id}
       </h2>
       <input
+      style={{
+        fontSize: "2rem",
+        padding: "0.5rem 1rem",
+        width: "100%"
+      }}
         type={props.type}
         id={props.id.toLowerCase()}
         value={props.value}

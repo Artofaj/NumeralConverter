@@ -47,6 +47,11 @@ const Converter = () => {
 
   return (
     <section id="Converter" className="card">
+      <button onClick={() => showCheatsheet(!cheatsheet)}>
+        {cheatsheet ? "hide" : "show"} cheatsheet
+      </button>
+
+      {cheatsheet && <CheatSheet />}
       {warning !== null && (
         <div style={{ backgroundColor: `var(--clr-red)` }}>{warning}</div>
       )}
@@ -68,10 +73,6 @@ const Converter = () => {
           />
         </div>
       </form>
-
-      <button onClick={() => showCheatsheet(!cheatsheet) }>{cheatsheet? "hide" : "show"} cheatsheet</button>
-
-      {cheatsheet && <CheatSheet />}
     </section>
   )
 }
