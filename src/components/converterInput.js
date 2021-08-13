@@ -17,12 +17,18 @@ const Input = params => {
 
   return (
     <label htmlFor={params.id.toLowerCase()}>
-      <div style={{margin:"var(--gap-sm)"}} className="big-font font-centered">{params.id}</div>
+      <div
+        style={{ margin: "var(--gap-sm)" }}
+        className="big-font font-centered"
+      >
+        {params.id}
+      </div>
       <input
         style={{
           fontSize: "2rem",
           padding: "0.5rem 1rem",
-          width: "100%",
+          width: "90%",
+          marginLeft: "5%",
         }}
         type={params.type}
         id={params.id.toLowerCase()}
@@ -30,7 +36,7 @@ const Input = params => {
         onChange={e => params.onChange(e)}
         onBlur={e => params.onBlur(e)}
         onKeyDown={e => validateInput(e)}
-        min={params.type ==="number" && 1}
+        min={params.type === "number" && 1}
       />
     </label>
   )

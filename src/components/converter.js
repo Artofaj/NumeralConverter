@@ -46,29 +46,28 @@ const Converter = () => {
   return (
     <section id="Converter" className="card" style={styles}>
       <Warning warning={warning} showWarning={showWarning} />
+      <div style={{ margin: "auto" }}>
+        <form style={{ padding: "var(--gap-md) 0", width: "100%" }}>
+          <div className="in-2-cols">
+            <Input
+              id="Arabicae"
+              type="number"
+              value={stateValue}
+              onBlur={validateEmpty}
+              onChange={handleChange}
+            />
+            <Input
+              id="Latinae"
+              type="text"
+              value={value.toRoman(stateValue)}
+              onBlur={validateEmpty}
+              onChange={handleChange}
+            />
+          </div>
+        </form>
 
-      <form
-        style={{ margin: "auto", padding: "var(--gap-md) 0", width: "100%" }}
-      >
-        <div className="in-2-cols">
-          <Input
-            id="Arabicae"
-            type="number"
-            value={stateValue}
-            onBlur={validateEmpty}
-            onChange={handleChange}
-          />
-          <Input
-            id="Latinae"
-            type="text"
-            value={value.toRoman(stateValue)}
-            onBlur={validateEmpty}
-            onChange={handleChange}
-          />
-        </div>
-      </form>
-      
-      <CheatSheet />
+        <CheatSheet />
+      </div>
     </section>
   )
 }
