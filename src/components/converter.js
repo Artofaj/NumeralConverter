@@ -9,6 +9,7 @@ const Converter = () => {
     display: "flex",
     justifyContent: "space-bewteen",
     alignContent: "center",
+    flexDirection: "column",
   }
 
   const value = new RomanNumerals(100)
@@ -46,7 +47,7 @@ const Converter = () => {
   }
 
   return (
-    <section id="Converter" className="card">
+    <section id="Converter" className="card" style={styles}>
       <button onClick={() => showCheatsheet(!cheatsheet)}>
         {cheatsheet ? "hide" : "show"} cheatsheet
       </button>
@@ -55,8 +56,10 @@ const Converter = () => {
       {warning !== null && (
         <div style={{ backgroundColor: `var(--clr-red)` }}>{warning}</div>
       )}
-      <form>
-        <div style={styles} className="in-2-cols">
+      <form
+        style={{ margin: "auto", padding: "var(--gap-sm) 0", width: "100%" }}
+      >
+        <div className="in-2-cols">
           <Input
             id="Arabicae"
             type="number"
