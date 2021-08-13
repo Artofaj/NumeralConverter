@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Input from "./converterInput"
 import RomanNumerals from "./romanNumerals"
 import CheatSheet from "./cheatSheet"
+import Warning from "./warning"
 
 const Converter = () => {
   const styles = {
@@ -35,15 +36,12 @@ const Converter = () => {
 
     if (targetValue == 0) {
       triggerWarning("Sorry, Romans didn't use the zero.")
-      targetValue = 1
+      value.setValue(1)
     }
   }
 
   const triggerWarning = message => {
     showWarning(message)
-    setTimeout(() => {
-      showWarning(null)
-    }, 1000)
   }
 
   return (
@@ -53,11 +51,11 @@ const Converter = () => {
       </button>
 
       {cheatsheet && <CheatSheet />}
-      {warning !== null && (
-        <div style={{ backgroundColor: `var(--clr-red)` }}>{warning}</div>
-      )}
+
+      <Warning warning={warning} showWarning={showWarning} />
+
       <form
-        style={{ margin: "auto", padding: "var(--gap-sm) 0", width: "100%" }}
+        style={{ margin: "auto", padding: "var(--gap-md) 0", width: "100%" }}
       >
         <div className="in-2-cols">
           <Input
