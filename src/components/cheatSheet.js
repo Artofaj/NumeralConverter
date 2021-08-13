@@ -4,9 +4,16 @@ const CheatSheet = () => {
   const [cheatsheet, showCheatsheet] = useState(false)
 
   return (
-    <section id="cheatsheet">
+    <>
+      <button
+        className={cheatsheet ? "secondary" : "primary"}
+        style={{ float: "right" }}
+        onClick={() => showCheatsheet(!cheatsheet)}
+      >
+        {cheatsheet ? "hide" : "show"} cheatsheet
+      </button>
       {cheatsheet && (
-        <>
+        <section id="cheatsheet">
           <h1>Cheatsheet</h1>
           <div style={{ overflow: "auto" }}>
             <table>
@@ -34,16 +41,9 @@ const CheatSheet = () => {
               </tbody>
             </table>
           </div>
-        </>
+        </section>
       )}
-      <button
-        className={cheatsheet ? "secondary" : "primary"}
-        style={{ float: "right" }}
-        onClick={() => showCheatsheet(!cheatsheet)}
-      >
-        {cheatsheet ? "hide" : "show"} cheatsheet
-      </button>
-    </section>
+    </>
   )
 }
 export default CheatSheet
