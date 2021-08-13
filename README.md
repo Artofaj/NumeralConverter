@@ -13,3 +13,9 @@ The scope of this project is:
 - Inputs only accept valid charachters.
 - A cheatsheet can be seen as a guideline.
 - A short description of the numerals is given as background information.
+
+## Installation
+
+In case you just want to see the final result, you can check it out on [netlify](https://loremlatinae.netlify.app/).
+
+Otherwise just clone this repo and run an ```npm install``` inside it. Since this is a gatsby project, you can run it with ```gatsby develop``` and open ```localhost:8000``` in your browser or compile it to a static website using ```gatsby compile```.
