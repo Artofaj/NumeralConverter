@@ -35,7 +35,7 @@ const Converter = () => {
 
     if (targetValue == 0) {
       triggerWarning("Sorry, Romans didn't use the zero.")
-      value.setValue(1)
+      setValue(1)
     }
   }
 
