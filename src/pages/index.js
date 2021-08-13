@@ -9,7 +9,10 @@ const IndexPage = () => (
     <Seo title="Converter" />
     <Converter />
     <section>
-      <h1>Arabic Numerals</h1>
+      <h1>
+        Arabicae 
+        <span className="mini-font"> (Arabic Numerals)</span>
+      </h1>
       <p>
         Arabic numerals, also called Western Arabic numerals and Ghubār
         numerals, are the ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9. The term
@@ -20,7 +23,10 @@ const IndexPage = () => (
       </p>
     </section>
     <section>
-      <h1>Roman Numerals</h1>
+      <h1>
+        Latinae 
+        <span className="mini-font"> (Roman Numerals)</span>
+      </h1>
       <p>
         Roman numerals are a numeral system that originated in ancient Rome and
         remained the usual way of writing numbers throughout Europe well into
