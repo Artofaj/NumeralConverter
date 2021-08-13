@@ -13,7 +13,7 @@ const Converter = () => {
     flexDirection: "column",
   }
 
-  const value = new RomanNumerals(100)
+  const value = new RomanNumerals(1000)
 
   const [stateValue, setValue] = useState(value.baseValue)
   const [warning, showWarning] = useState(null)
