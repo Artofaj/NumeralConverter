@@ -19,3 +19,7 @@ The goal is to create a basic tool that can convert a Roman numeral to and from 
 In case you just want to see the final result, you can check it out on [netlify](https://loremlatinae.netlify.app/).
 
 Otherwise just clone this repo and run an ```npm install``` inside it. Since this is a gatsby project, you can run it with ```gatsby develop``` and open ```localhost:8000``` in your browser or compile it to a static website using ```gatsby compile```.
+
+## Additional remarks
+
+The idea of this project was to provide a tool for school children. Hence, while not beeing a fan of neither the Indie Flower nor the Comic Sans fonts, their readability has been proven to be quite good among school children. For this reason, I decided to implement it. The font size is quite big and serves the same purpose.
